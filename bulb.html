@@ -1,0 +1,519 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+    *
+    {
+        margin:0;
+        padding:0;
+        box-sizing:border-box;
+    }
+    body
+    {
+        
+        justify-content:center;
+        align-items:center;
+        min-height:100vh;
+        background:rgba(0, 0, 0, 0.903);
+        display:grid;
+        grid-template-columns: 1.2fr 1fr 1fr 1fr;
+        grid-template-rows: 1fr 1fr 4.5fr 1fr;
+        
+    }  
+    
+    .icon
+    {   
+        opacity:0;
+    }
+
+
+    body.on .icons
+
+    { transition: 1.5s ease-in-out 3s;
+      grid-column-start: 2;
+      grid-column-end: 4;
+      display:grid;
+      grid-template-columns:0.5fr 1fr 0.5fr 1fr 0.5fr 1fr 0.5fr;
+    }
+    body.on .icon
+    {   display:grid;
+        opacity:1;
+        transition: 1.5s ease-in-out 3s;
+        background-color: aliceblue;
+        justify-content: center;
+        padding: 4px;
+        width:100%;
+        border:8px double rgb(0, 0, 0);
+    }
+    
+    body.on .container
+    {   transition: 1.5s ease-in-out 3s;
+        grid-column-start: 2;
+      grid-column-end: 4;
+      justify-content: center;
+      align-items: center;
+      
+    }
+
+    body.on .icon:hover
+    {   transition: 0.5s ease-in-out 0s;
+        transform: scale(1.3);
+        border-radius: 15px;
+        box-shadow:2px 2px 10px rgba(0, 0, 0, 0.553);
+    } 
+
+    body.on
+
+    {transition: 1.5s ease-in-out 3s;
+     background:radial-gradient(rgb(178, 196, 216),rgba(0, 0, 0, 0.922));
+
+    }    
+
+    .bulb
+    {   
+        position:absolute;
+        top:45%;
+        left:50%;
+        width: 5vw;
+        height:5vw;
+        background:rgb(102, 102, 102);
+        border-radius:50%;
+        z-index: 2;
+        transition: 1.5s ease-in-out 3s;
+
+    }
+    
+    body.on .card
+    {   transition: 1.5s ease-in-out 3s;
+        position:relative;
+        width:40vw;
+        height:55vh;
+        margin:3vw;
+        
+        box-shadow:20px 20px 50px rgba(0, 0, 0, 0.797);
+        border-radius:15px;
+        background:rgba(255, 255, 255, 0.371);
+        overflow: hidden;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+    }
+    
+    body.on .card.on
+    {   
+        position:relative;
+        width:40vw;
+        height:55vh;
+        margin:3vw;
+        
+        box-shadow:20px 20px 50px rgba(0, 0, 0, 0.797);
+        border-radius:15px;
+        background:rgb(0, 0, 0);
+        overflow: hidden;
+        display: flex;
+
+        justify-content: center;
+        align-items: center;
+        backdrop-filter: blur(5px);
+    }
+
+    body.on .bulb
+    {
+     background:white;
+     transform: scale(0.75);
+     box-shadow:0 0 50px rgb(255, 255, 255),
+     0 0 100px rgb(255, 255, 255),
+     0 0 150px rgb(244, 244, 244),
+     0 0 200px rgb(255, 255, 255),
+     0 0 250px rgb(255, 255, 255),
+     0 0 300px rgb(255, 238, 1);
+     border: 2px solid white;
+     top:5%;
+    }
+    .Titleleft
+    {
+        position:absolute;
+        top:42%;
+        left:40%;
+        color:rgb(39, 39, 39);
+        transition: 1.5s ease-in-out 3s;
+    }
+    .Titleright
+    {
+        position:absolute;
+        top:42%;
+        left:55%;
+        color:rgb(39, 39, 39);
+        transition: 1.5s ease-in-out 3s;
+    }
+    body.on .Titleleft
+    {
+        position:absolute;
+        top:2%;
+        color:rgb(0, 0, 0);
+        left:41%;
+        transform: scale(0.75);
+    }
+    body.on .Titleright
+    {
+        position:absolute;
+        top:2%;
+        color:rgb(0, 0, 0);
+        left:53%;
+        transform: scale(0.75);
+    }
+    .bulb::before
+    {   
+        content:'';
+        position:absolute;
+        width:2vw;
+        left:29%;
+        bottom:10%;
+        height:5.1vw;
+        background:rgb(102, 102, 102);
+        border-top: 1.7vw solid rgb(0, 0, 0);
+        border-radius: 15px ;
+        z-index:-1;
+    }
+    body.on .bulb::before
+    {   
+        background:white;
+    }
+    body.on .bulb::after
+    {
+       content:'';
+       position:absolute;
+       top:50%;
+       left:50%;
+       transform:translate(-50%,-50%);
+       width:7vw;
+       background: rgba(255, 255, 255, 0.556);
+       height:7vw;
+       border-radius:50%;
+       filter:blur(40px)
+
+
+       
+    }
+
+    .wire
+    {
+        position:absolute;
+        left:52.2%;
+        transition: 1.5s ease-in-out 3s;
+        bottom:50%;
+        width:0.5vw;
+        z-index:-2;
+        height:100%;
+        background-color: black;
+    }
+    body.on .wire
+    {   
+        bottom:95%;
+    }
+    .about.on
+    {   
+        opacity:0;
+ 
+    }
+    .contact.off
+    {
+        display:none;
+    }
+    body.on .about.off
+    {
+        display:none;
+    }
+    body.on .contact.off
+    {   
+        display:none;
+    }
+    body.on .about.on
+    {   
+        transition: 1.5s ease-in-out 3s;
+        opacity:1;
+        display:block;
+    }
+    body.on .contact.on
+    {  
+        justify-content: center;
+        display:block;   
+    }
+    img
+    {
+        display:none;
+    }
+
+    body.on img{
+        display:block;
+        object-fit: fill;
+        height:20vw;
+        width:40vw;
+        top:10%;
+    }
+    #dialogue-box
+    {
+        opacity:0;
+    }
+    body.on #dialogue-box
+    {
+     opacity:1;   
+     width:100%;
+    }
+    
+    </style>
+</head>
+
+<body>
+   
+    <div class="light">
+
+        <div class="wire">
+
+        </div>
+        <div class="bulb">
+
+        </div>
+        <div class="Titleleft">
+            <p style="font-size:7vw;">EN</p>
+        </div>
+        <div class="Titleright">
+            <p style="font-size:7vw;">GMA</p>
+        </div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div class="icons">
+           <div>
+           </div>
+           <div class="icon" id="i1">
+            <h3>
+            ABOUT
+            </h3>
+           </div>
+           <div >
+           </div>
+           <div class="icon" id="i2">
+            <h3>
+                FILLER
+            </h3>
+            
+           </div>
+           <div>
+           </div>
+           <div class="icon" id="i3">
+            <h3>
+                CONTACT
+            </h3>
+            
+           </div>
+    </div>
+    <div>
+
+    </div>
+    <div>
+
+    </div>
+    <div class="container">
+
+        <div class="card">
+
+        <div class="about">
+            
+            welcome it
+            like epiphany,
+            
+            unleash it
+            like a song,
+            
+            honor what you love
+            with ruin
+
+        </div>
+
+        <div class="contact">
+            <h1 id="dialogue-box" style="color:aliceblue">
+                do you expect me to talk to you after you abondoned me in this tiny space?
+            </h1>
+            <img src="Asriel_Dreemurr_battle_final_form.gif" alt="there is no alternative for me,you stupid human">
+
+        </div>
+
+        </div>
+
+    </div>
+    <script type="text/javascript" src="vanilla-tilt.js">
+
+    </script>
+    <script>
+        
+        let bulb=document.querySelector('.bulb'); 
+        let body=document.querySelector('body');
+        let i1=document.querySelector('#i1');
+        let i2=document.querySelector('#i2');
+        let about=document.querySelector('.about');
+        let contact=document.querySelector('.contact');
+        let card=document.querySelector('.card');
+        let i=0;
+        let img=document.querySelector('img')
+
+        let story = ["Don't disturb my sleep just because you are bored",
+  "Oh gosh,fine i will tell you a story",
+  "A long time ago, a human fell into the RUINS.",
+  "Injured by its fall, the human called out for help.",
+  "ASRIEL, the king's son, heard the human's call.",
+  "He brought the human back to the castle.",
+  "Over time, ASRIEL and the human became like siblings.",
+  "The King and Queen treated the human child as their own.",
+  "The underground was full of hope.",
+  "Then... One day...",
+  "The human became very ill.",
+  "The sick human had only one request.",
+  "To see the flowers from their village.",
+  "But there was nothing we could do.",
+  "The next day.",
+  "The next day.",
+  "...",
+  "The human died.",
+  "ASRIEL, wracked with grief, absorbed the human's SOUL.",
+  "He transformed into a being with incredible power.",
+  "With the human SOUL, ASRIEL crossed through the barrier.",
+  "He carried the human's body into the sunset.",
+  "Back to the village of the humans.",
+  "ASRIEL reached the center of the village.",
+  "There, he found a bed of golden flowers.",
+  "He carried the human onto it.",
+  "Suddenly, screams rang out.",
+  "The villagers saw ASRIEL holding the human's body.",
+  "They thought that he had killed the child.",
+  "The humans attacked him with everything they had.",
+  "He was struck with blow after blow.",
+  "ASRIEL had the power to destroy them all.",
+  "But...",
+  "ASRIEL did not fight back.",
+  "Clutching the human...",
+  "ASRIEL smiled, and walked away.",
+  "Wounded, ASRIEL stumbled home.",
+  "He entered the castle and collapsed.",
+  "His dust spread across the garden.",
+  "The kingdom fell into despair.",
+  "The king and queen had lost two children in one night.",
+  "The humans had once again taken everything from us.",
+  "The king decided it was time to end our suffering.",
+  "Every human who falls down here must die.",
+  "With enough souls, we can shatter the barrier forever.",
+  "It's not long now.",
+  "Thanks to you, everything has fallen into place.",
+  "I am going to be free.",
+  "Aren't you excited?",
+  "Aren't you happy?",
+  "See you soon.My best friend"
+];
+        
+        about.classList.toggle('on');
+        contact.classList.toggle('off');
+
+        bulb.onclick=function()
+        {
+            body.classList.toggle('on');
+        }
+        
+        i1.onclick=function()
+        {
+            about.classList.remove('off');
+            contact.classList.remove('on');
+            about.classList.add('on');
+            contact.classList.add('off');
+            card.classList.remove('on');
+        }
+
+        i2.onclick=function()
+        {
+            about.classList.remove('on');
+            contact.classList.remove('off');
+            about.classList.add('off');
+            contact.classList.add('on');
+            card.classList.add('on');
+    
+        }
+        
+        var dialogueBox = document.getElementById("dialogue-box");
+        
+
+        dialogueBox.addEventListener("click", function() {
+       
+        if(i<52)
+        {
+        dialogueBox.innerHTML = story[i];
+        i++;
+        }
+       
+        if(i==52)
+        {   
+            body.classList.toggle('on');
+            dialogueBox.innerHTML = "...";
+            setTimeout(
+            function() {dialogueBox.innerHTML = "just tried a jump scare.Seems it didn't work";
+        i++},10000);
+
+            i++;
+        }
+
+        if(i>53)
+        {   
+            dialogueBox.innerHTML = "you can always rewind time by using the restart button";
+        }
+        
+                         
+        })
+        
+        img.addEventListener("click", function() {
+       
+       if(i<52)
+       {
+       dialogueBox.innerHTML = story[i];
+       i++;
+       }
+      
+       if(i==52)
+       {   
+           body.classList.toggle('on');
+           dialogueBox.innerHTML = "...";
+           setTimeout(
+           function() {dialogueBox.innerHTML = "just tried a jump scare.Seems it didn't work";
+       i++},10000);
+
+           i++;
+       }
+
+       if(i>53)
+       {   
+           dialogueBox.innerHTML = "you can always rewind time by using the restart button";
+       }
+       
+                        
+       })
+
+
+        VanillaTilt.init(document.querySelector(".card"), {
+		max: 25,
+		speed: 400
+	});
+    </script>
+
+</body>
+</html>
