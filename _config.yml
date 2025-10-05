@@ -3,7 +3,9 @@ description: "My personal website and technical blog"
 baseurl: "" # leave blank for user.github.io
 url: "https://whitewhistle.github.io"
 
-theme: jekyll-theme-distill
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag
 
 # Blog settings
 collections:
