@@ -1,0 +1,15 @@
+title: "White Whistle"
+description: "My personal website and technical blog"
+baseurl: "" # leave blank for user.github.io
+url: "https://whitewhistle.github.io"
+
+theme: jekyll-theme-distill
+
+# Blog settings
+collections:
+  posts:
+    output: true
+
+markdown: kramdown
+kramdown:
+  math_engine: katex
