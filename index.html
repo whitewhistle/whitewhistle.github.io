@@ -1,5 +1,66 @@
 <!DOCTYPE HTML>
 <html lang="en">
+
+  <style>
+/* Default layout (large screens): side by side */
+table.main-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+td.profile-text {
+  width: 63%;
+  vertical-align: middle;
+  padding: 2.5%;
+}
+
+td.profile-image {
+  width: 37%;
+  padding: 2.5%;
+  max-width: 37%;
+}
+td.profile-image img{
+  width: 100%;
+}
+
+  a.profile-image {
+    display: none;
+  }
+
+/* Responsive layout for smaller screens */
+@media (max-width: 768px) {
+  tr.responsive-row {
+    display: flex;
+    flex-direction:column; /* image on top */
+    align-items: center;
+  }
+  td.profile-image {
+    display: none;
+  }
+  a.profile-image {
+    display: flex;
+    flex-direction:column;
+    justify-content: center;
+    width: 60%;
+    margin: 0 auto 15px;
+
+  }  
+
+  a.profile-image img {
+    width: 60%;
+    align-self: center;
+    min-width: 220px;
+    height: auto;
+    border-radius: 5%;
+  }
+
+  td.profile-text{
+    width: 100% !important;
+    max-width: 100% !important;
+}}
+</style>
+
+
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
 
@@ -13,31 +74,40 @@
   </head>
 
   <body>
-    <table style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
+    <table  class="main-table" style="width:100%;max-width:800px;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
       <tr style="padding:0px">
         <td style="padding:0px">
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
-            <tr style="padding:0px">
-              <td style="padding:2.5%;width:63%;vertical-align:middle">
+            <tr class="responsive-row" style="padding:0px">
+              <td class="profile-text" style="padding:2.5%;width:63%;vertical-align:middle">
                 <p class="name" style="text-align: center;padding-bottom: 5%;font-family:'Verdana';font-size:xx-large;">
                   Barath Chandran.C
                 </p>
+                <a href="images1/Screenshot 2025-03-28 175712.png" class="profile-image">
+                      <img style="border-radius:2%;" 
+                          id="desktop-image1"
+                          alt="profile photo" 
+                          src="" 
+                          class="hoverZoomLink">
+                      <span style="margin-top:8px; font-family:'Verdana'; font-size:smaller; color:blue; width:fit-content;">
+                      Refresh the page to Monte carlo sample a new Barath instance.
+                    </span>
+                </a>
                 <p style="font-family: Times New Roman;font-size:medium;font-weight: 400;">
 I am a senior year undergraduate at <a href="https://www.iitr.ac.in/">Indian Institute of Technology Roorkee</a> in India, majoring in <a href="https://ece.iitr.ac.in/">Electronics and Communications Engineering</a>. But ironically,
 I'm more involved in research on Deep Learning, particularly honing my knowledge in Generative Modeling, Reinforcement Learning, and Computer Vision. 
-
 As of Sept 2025, I'm a Research Intern at the <a href="https://www.cogai4sci.com/">CogAI4Sci Lab</a> at the National University of Singapore, 
 where I work on some fascinating problems in discrete diffusion for protein structures and tackling 
 hallucinations in image diffusion models. I spent August 2025 as a Visiting Scholar there, collaborating 
 with Dr. Dianbo Liu and Dr. Srinivas Anumasa, which was an incredible learning experience that 
-pushed my understanding of how diffusion models can be applied beyond traditional image generation. This equipped
-me with insights that solidified my decision to further pursue research at the intersection of generative modeling, AI4Science, and creativity. 
-
+pushed my understanding of how diffusion models can be applied beyond traditional image generation.
+<br>
+<br>
 Other than generation, I have also worked on watermarking AI-generated content under <a href="https://www.researchgate.net/profile/Vinod-Pankajakshan">Prof. Vinod Pankajakshan</a>, trying to add an invisible watermark (and quantify its "invisibility") in the latent space of text-to-image diffusion models.
 I also presently work at the Vision and Image Processing Lab improving Face Reenactment Models for supplementing speech therapy for patients. Previously, as an avid fan of game bots, I have also tried my hand at reinforcement learning for training game agents.
-
-At IIT Roorkee, I'm actively involved in the <a href="https://dsgiitr.in/blogs/">Data Science Group</a>, where we build a community around ML research and organize workshops and hackathons. I'm also a reviewer for TMLR, having reviewed papers primarily in Computer Vision and Reliable ML.
-
+<br>
+<br>
+At IIT Roorkee, I'm actively involved in the <a href="https://dsgiitr.in/blogs/">Data Science Group</a>, where we build a community around ML research and organize workshops and hackathons. I'm also a reviewer for <a href="https://jmlr.org/tmlr/">TMLR</a>, having reviewed papers primarily in Computer Vision and Reliable ML.
 Otherwise, I spend my time watching anime or reading manga/webtoons/web novels (a wide variety of stuff actually). Tokyo Ghoul is the best thing I have read, and Made in Abyss is the best thing I have seen. 
 
 
@@ -52,19 +122,36 @@ Otherwise, I spend my time watching anime or reading manga/webtoons/web novels (
                   <a href="https://github.com/whitewhistle/">Github</a>
                 </p>
               </td>
-              <td style="padding:2.5%;width:37%;max-width:37%">
-                <a href="images1\Screenshot 2025-03-28 175712.png"><img style="width:100%;max-width:100%;object-fit:scale-down; border-radius: 0%;" alt="profile photo" src="images1/Screenshot 2025-03-28 175712_edited.jpg" class="hoverZoomLink"></a>
-              </td>
+                    <td class="profile-image">
+                    <a href="images1/Screenshot 2025-03-28 175712.png">
+                      <img style="border-radius:0%;" 
+                          alt="profile photo" 
+                          id="desktop-image2"
+                          src="" 
+                          class="hoverZoomLink">
+                    <span style="display:block; margin-top:8px; font-family:'Verdana'; font-size:smaller; color:blue;">
+                      Refresh the page to Monte Carlo sample a new Barath instance.
+                    </span>
+                    </a>
+                  </td>
             </tr>
           </tbody></table>
           <table style="width:100%;border:0px;border-spacing:0px;border-collapse:separate;margin-right:auto;margin-left:auto;"><tbody>
               <tr>
-              <td style="padding:16px;width:100%;vertical-align:middle">
+              <td style="padding:16px;width:100%;vertical-align:middle;font-family: Times New Roman;font-size:medium;font-weight: 100;">
                 <h2>Research Interests</h2>
-                  <ul style="font-family: Times New Roman;font-size:medium;font-weight: 100;">
+                  <br>
+                  On the research side I am currenlty interested in the following questions around Generative Modelling, Probabilistic Inference and AI4Science:
+                  <ol>
+                  <li>How do we deepen our understanding of the emergent behaviors of distribution(score, flow, energy) based generative models: their failure modes, their ability to generalize, their inductive bias?</li>
+                  <li>How can we mathematically mitigate their problems at the root cause to create more reliable and controllable by design models?</li>
+                  <li>Further, how do we design generative models specifically to fill gaps in a wider range of scientific domains, beyond mainstream language and vision tasks?</li>
+                  </ol>
+                  Broadly speaking I have previously worked in and interested in the following
+                  <ul >
                   <li >Machine Learning & Deep Learning</li>
-                  <li >Rienforcement Learning - MARL, Meta RL, Game AI</li>
-                  <li >Diffusion - discrete, watermarking, creativity</li>
+                  <li >Watermarking</li>
+                  <li >Rienforcement Learning - Meta RL & Game AI</li>
                   <li >Applied Computer Vision- 2d and 3d</li>
                   </ul>
                 
@@ -129,7 +216,7 @@ Otherwise, I spend my time watching anime or reading manga/webtoons/web novels (
     </td>
 
     </tr>
-    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()"  bgcolor="#ffffd0">
+    <tr onmouseout="bolt3d_stop()" onmouseover="bolt3d_start()">
       <td style="padding:16px;width:20%;vertical-align:middle">
         <div class="one">
           <img src='images1\Screenshot 2025-05-31 102520.png' width="160">
@@ -172,13 +259,13 @@ Otherwise, I spend my time watching anime or reading manga/webtoons/web novels (
         <a>Tingting Chen</a>, 
         <a>Dianbo Liu</a>
         <br>
-        <em>TMLR</em>, 2024 (presented at NeurIPS,2024)
+        <em>AI4Sci workshop, NeurIPS</em>, 2025
         <br>
-        <a href="https://openreview.net/forum?id=4NQLyTe7r5#discussion">Open Review</a>
+        <a href="https://arxiv.org/pdf/2509.02069">Arxiv</a>
         <p></p>
         <p>
-        Reproducing the studies of the original paper on a data augmentation algorithm/curriculum for image recognition models fine-tuned to long-tailed (heavily class-imbalanced) datasets.
-        Extended the study to analyze how the algorithm improves the Latent representation Space of Imbalanced datasets.
+        Applying a data-dependent noise scale for the Gaussian noise, inversely proportional to the Kernel Density Estimate, to improve the inferred probability landscape in the Walk Jump sampler for ab initio protein discovery.
+        Introduced a kernel density dependent noising instead of the uniform noising for the walk and jump model.Improved the discovery of novel protein sequences and coverage of the real manifold
         </p>
       </td>
     </tr>
@@ -336,7 +423,7 @@ Otherwise, I spend my time watching anime or reading manga/webtoons/web novels (
               <td style="padding:0px">
                 <br>
                 <p style="text-align:right;font-size:small;">
-                  Thank you Jon Barron for the website's <a href="https://github.com/jonbarron/jonbarron_website">source code</a>. 
+                  Thank you Jon Barron for the website's <a href="https://github.com/jonbarron/jonbarron_website">source code and <a>Homanga bharadwaj</a> whose site I first saw this design on.</a>. 
                 </p>
               </td>
             </tr>
@@ -344,5 +431,39 @@ Otherwise, I spend my time watching anime or reading manga/webtoons/web novels (
         </td>
       </tr>
     </table>
+
+<script>
+// List of image URLs
+const images = [
+   "images1/Screenshot 2025-03-28 175712_edited.jpg",
+   "images1/IMG-20251104-WA005.jpg",
+   "images1/IMG-20251104-WA0002.jpg",
+   "images1/IMG-20251104-WA0003.jpg",
+   "images1/IMG-20251104-WA0004.jpg",
+];
+
+// Pick one at random
+const prevImage = localStorage.getItem("lastImage");
+
+// Function to pick a different random image
+function pickNewImage() {
+  let newImage;
+  do {
+    newImage = images[Math.floor(Math.random() * images.length)];
+  } while (newImage === prevImage && images.length > 1);
+  return newImage;
+}
+
+// Pick one at random (not the same as last)
+const randomImage = pickNewImage();
+
+// Save for next reload
+localStorage.setItem("lastImage", randomImage);
+
+// Assign it to both desktop & mobile images
+document.getElementById("desktop-image1").src = randomImage;
+document.getElementById("desktop-image2").src = randomImage;
+</script>
+
   </body>
 </html>
